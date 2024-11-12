@@ -245,10 +245,8 @@ function getWeather() {
 
     const AIR_QUALITY_API = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${API_KEY}`;
 
-    fetch(AIR_QUALITY_API)
-    .then((response) => response.json())
-    .then((data) => {
-      airQuality.innerHTML = getAirQuality(data.list[0].main.aqi);
+    fetch(AIR_QUALITY_API).then((response) => response.json()).then((data) => {
+      airQuality.innerHTML = `${getAirQuality(data.list[0].main.aqi)}`;
     });
   });
 
