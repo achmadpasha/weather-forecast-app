@@ -4,7 +4,7 @@
   "main": "tailwind.config.js",
   "scripts": {
     "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
-    "build": "tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify"
+    "build": "tailwindcss -i ./public/css/style.css -o ./public/css/styles.css --minify"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
