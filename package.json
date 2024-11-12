@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch"
+    "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
