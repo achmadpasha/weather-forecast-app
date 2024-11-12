@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scroll-custom::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.next-24:hover div img {
+  filter: drop-shadow(0 2px 8px gray) drop-shadow(0 -2px 3px gray);
+  /* filter: drop-shadow(0 4px 3px gray); */
+}
+
+@media (max-width: 767px) {
+  .md-search {
+    display: none;
+  }
+
+  .next-5-day {
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .next {
+    grid-template-areas:
+    "next-5day next-24"
+    ;
+  }
+
+  .next-24-h {
+    grid-area: next-24;
+  }
+
+  .next-5-day {
+    grid-area: next-5day;
+  }
+
+  .next24-container {
+    height: 286px;
+  }
+}
