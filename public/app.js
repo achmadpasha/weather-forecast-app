@@ -23,9 +23,9 @@ let sunset = document.querySelector(".sunset-time");
 
 // Initialize an array to store elements
 // next 48 hours selectors
-let todayTimes = [];
-let todayIcons = [];
-let todayTemps = [];
+let next48Times = [];
+let next48Icons = [];
+let nect48Temps = [];
 // 5-days forecast selectors
 let dateDay = [null];
 let iconDay = [null];
@@ -35,19 +35,19 @@ let statDay = [null];
 // Iterate over next-48 hours selectors
 for (let i = 1; i <= 16; i++) {
     // Create a selector for the corresponding class
-    let timeClass = `.today-time-${i}`;
-    let iconClass = `.today-icon-${i}`;
-    let tempClass = `.today-temp-${i}`;
+    let timeClass = `.next-48-time-${i}`;
+    let iconClass = `.next-48-icon-${i}`;
+    let tempClass = `.next-48-temp-${i}`;
     
     // Retrieve elements from the DOM
-    let todayTime = document.querySelector(timeClass);
-    let todayIcon = document.querySelector(iconClass);
-    let todayTemp = document.querySelector(tempClass);
+    let next48Time = document.querySelector(timeClass);
+    let next48Icon = document.querySelector(iconClass);
+    let next48Temp = document.querySelector(tempClass);
     
     // Store elements into an array
-    todayTimes.push(todayTime);
-    todayIcons.push(todayIcon);
-    todayTemps.push(todayTemp);
+    next48Times.push(next48Time);
+    next48Icons.push(next48Icon);
+    nect48Temps.push(next48Temp);
 
     if (i == 1) {
       // Iterate over 5-days forecast selectors
@@ -75,8 +75,17 @@ for (let i = 1; i <= 16; i++) {
 
 
 // search
+// const searchBtn = document.querySelector(".btn-search");
+const searchForm = document.querySelector(".location-form");
 let search = document.querySelector(".get-location");
-document.querySelector(".location-form").addEventListener("submit", (e) => {
+
+document.querySelector("#btn-search").addEventListener("click", function() {
+  search.classList.toggle("show");
+  searchForm.classList.toggle("show-border");
+  document.querySelector(".search-icon").classList.toggle("show");
+});
+
+searchForm.addEventListener("submit", (e) => {
   // prevent default action
   e.preventDefault();
   // change current location
@@ -249,10 +258,10 @@ function getWeather() {
   .then((response) => response.json())
   .then((data) => {
     // next 48 hours forecast
-    for (let i = 0; i < todayTimes.length; i++) {
-      todayTimes[i].innerHTML = `${getFormatHour(data.list[i].dt, data.city.timezone)}`;
-      todayIcons[i].innerHTML = `<img class="w-14 h-14 object-cover" src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" />`;
-      todayTemps[i].innerHTML = `${convertKelvin(units, data.list[i].main.temp)}&#176`;
+    for (let i = 0; i < next48Times.length; i++) {
+      next48Times[i].innerHTML = `${getFormatHour(data.list[i].dt, data.city.timezone)}`;
+      next48Icons[i].innerHTML = `<img class="w-14 h-14 object-cover" src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" />`;
+      nect48Temps[i].innerHTML = `${convertKelvin(units, data.list[i].main.temp)}&#176`;
     }
 
     // filter the forecast to get only one forecast per day

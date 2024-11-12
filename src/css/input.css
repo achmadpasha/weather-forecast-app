@@ -25,9 +25,36 @@
   background: #555;
 }
 
+.location-form {
+  width: 48px;
+  /* transform-origin: left; */
+  /* transform: scaleX(.5); */
+  border: 2px solid transparent;
+  transition: all .2s ease-in;
+}
+.location-form.show-border {
+  width: fit-content;
+  border: 2px solid rgb(0 0 0 / 0.05);
+  transition: all .2s ease-out;
+}
+
+.search-icon.show {
+  color: rgb(156 163 175 / 1);
+  transition: all .2s ease-out;
+}
+
+.get-location {
+  transform: scaleX(0);
+  transition: all .3s ease-in-out;
+}
+
+.get-location.show {
+  transform: scaleX(1)!important;
+  transition: all .3s ease-in-out;
+}
+
 .next-24:hover div img {
   filter: drop-shadow(0 2px 8px gray) drop-shadow(0 -2px 3px gray);
-  /* filter: drop-shadow(0 4px 3px gray); */
 }
 
 @media (max-width: 767px) {
