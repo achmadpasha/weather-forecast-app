@@ -799,10 +799,6 @@ video {
   justify-self: center;
 }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
-}
-
 .overflow-x-scroll {
   overflow-x: scroll;
 }
@@ -1066,6 +1062,10 @@ video {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+body {
+  overflow-x: hidden!important;
 }
 
 .location-form {
