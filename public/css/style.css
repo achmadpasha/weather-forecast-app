@@ -850,10 +850,6 @@ video {
   padding: 0px;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-3 {
   padding: 0.75rem;
 }
@@ -1077,6 +1073,7 @@ body {
 .location-form.show-border {
   width: -moz-fit-content;
   width: fit-content;
+  padding: 0 8px!important;
   border: 2px solid rgb(0 0 0 / 0.05);
   transition: all .2s ease-out;
 }
