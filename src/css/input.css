@@ -25,6 +25,10 @@
   background: #555;
 }
 
+body {
+  overflow-x: hidden!important;
+}
+
 .location-form {
   width: 48px;
   border: 2px solid transparent;
