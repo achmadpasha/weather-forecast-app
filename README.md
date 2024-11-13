@@ -1,5 +1,9 @@
 # Weather Forecast Web Application
 
+## Demo
+
+Visit the [**demo here**](https://achmadpasha.github.io/weatherin/).
+
 ## Overview
 
 The Weather Forecast Web Application is a fully functional, responsive web tool that allows users to quickly view current weather conditions, air quality, and forecasts for up to 5 days. Built using HTML, TailwindCSS, JavaScript, and integrated with the OpenWeatherMap API, the application provides an intuitive and visually appealing interface for users to track weather updates across different locations. It incorporates features such as switching between temperature units (Celsius/Fahrenheit), a city search bar, and a dynamic display of real-time weather data.
